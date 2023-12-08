@@ -75,3 +75,18 @@ export const coffeeItems = [
   
 
 ]
+// register on rapid api, subscirbe exercise db api and use your api key here
+// https://rapidapi.com/justin-WFnsXH_t6/api/exercisedb
+
+
+
+export const IntroduceImage = [
+  require('../public/images/slide1.jpg'),
+  require('../public/images/slide2.jpg'),
+  require('../public/images/slide3.jpg'),
+  require('../public/images/slide4.jpg'),
+  require('../public/images/slide5.jpg'),
+  require('../public/images/slide6.jpg'),
+]
+
+

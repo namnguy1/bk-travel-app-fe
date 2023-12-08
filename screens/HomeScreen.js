@@ -81,8 +81,8 @@ export default function HomeScreen() {
             renderItem={({item})=> <CoffeeCard item={item} />}
             firstItem={1}
             loop={true}
-            inactiveSlideScale={0.75}
-            inactiveSlideOpacity={0.75}
+            inactiveSlideScale={0.8}
+            inactiveSlideOpacity={0.3}
             sliderWidth={width}
             itemWidth={width*0.63}
             slideStyle={{display: 'flex', alignItems: 'center'}}

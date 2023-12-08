@@ -9,6 +9,10 @@ import { themeColors } from '../theme';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {HomeIcon as HomeOutline, HeartIcon as HeartOutline, ShoppingBagIcon as BagOutline } from 'react-native-heroicons/outline';
 import {HomeIcon as HomeSolid, HeartIcon as HeartSolid, ShoppingBagIcon as BagSolid} from 'react-native-heroicons/solid';
+import Home from '../screens/Home';
+// import Home1 from '../screens/Home1';
+
+
 
 
 const Stack = createNativeStackNavigator();
@@ -16,6 +20,7 @@ const Tab = createBottomTabNavigator();
 const ios = Platform.OS == 'ios';
 LogBox.ignoreLogs([
   'Non-serializable values were found in the navigation state',
+  'Already include file name'
 ]);
 
 export default function AppNavigation() {
@@ -39,7 +44,7 @@ function HomeTabs(){
         tabBarShowLabel: false,
         tabBarIcon: ({ focused }) => menuIcons(route, focused),
         tabBarStyle: {
-          marginBottom: 20,
+          marginBottom: 15,
           height: 75,
           alignItems: 'center',
           
@@ -55,9 +60,10 @@ function HomeTabs(){
       })}
       
       >
-      <Tab.Screen name="home" component={HomeScreen} />
-      <Tab.Screen name="favourite" component={HomeScreen} />
-      <Tab.Screen name="cart" component={HomeScreen} />
+      <Tab.Screen name="home" component={Home} />
+      <Tab.Screen name="favourite" component={Home} />
+      <Tab.Screen name="cart" component={Home} />
+      <Tab.Screen name="product" component={Home} />
     </Tab.Navigator>
   )
 }
@@ -71,6 +77,9 @@ const menuIcons = (route, focused)=> {
   } else if (route.name === 'favourite') {
     icon =  focused? <HeartSolid size="30" color={themeColors.bgLight} /> : <HeartOutline size="30" strokeWidth={2} color="white" />
   }else if(route.name==='cart'){
+    icon =  focused? <BagSolid size="30" color={themeColors.bgLight} /> : <BagOutline size="30" strokeWidth={2} color="white" />
+  }
+  else if(route.name==='product'){
     icon =  focused? <BagSolid size="30" color={themeColors.bgLight} /> : <BagOutline size="30" strokeWidth={2} color="white" />
   }
 
